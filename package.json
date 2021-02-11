@@ -1,0 +1,16 @@
+{
+  "name": "aaabot",
+  "version": "1.0.0",
+  "description": "bot for AAA server",
+  "main": "index.js",
+  "scripts": {
+    "test": "go"
+  },
+  "author": "papa",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security"
+  }
+}
