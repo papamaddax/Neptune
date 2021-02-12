@@ -7,6 +7,7 @@ module.exports = {
         const customEmbed = new Discord.MessageEmbed
         .setTitle(args[0])
         .setDescription(args[1])
+        message.channel.send(customEmbed)
 
 
     },
