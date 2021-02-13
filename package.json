@@ -1,5 +1,5 @@
 {
-  "name": "aaabot",
+  "name": "neptune",
   "version": "1.0.0",
   "description": "bot for AAA server",
   "main": "index.js",
@@ -14,5 +14,14 @@
     "fs": "0.0.1-security",
     "ms": "^2.1.3",
     "ws": "^7.4.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papamaddax/Neptune.git"
+  },
+  "bugs": {
+    "url": "https://github.com/papamaddax/Neptune/issues"
+  },
+  "homepage": "https://github.com/papamaddax/Neptune#readme"
 }

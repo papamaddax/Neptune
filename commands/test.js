@@ -2,6 +2,6 @@ module.exports = {
     name: "test",
     aliases: ["aliase"],
     execute(message, args) {
-        message.reply("template command")
+        message.channel.send("template command")
     },
 };
