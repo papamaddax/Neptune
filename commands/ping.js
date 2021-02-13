@@ -8,8 +8,9 @@ module.exports = {
         .setTitle("Ping")
      message.channel.send('loading...').then((msg) => {
       var ping = msg.createdTimestamp - message.createdTimestamp; 
-      msg.edit("Pong! bot's ping is `" + ping + 'ms`.');
+      msg.delete()
       embed.setColor("#90e78d")
+      embed.setDescription("Pong! bot\'s ping is" + ping +'ms')
 
       message.channel.send(embed) 
     });
