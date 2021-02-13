@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: 'ping',
     description: "shows the bot/'s ping",
-    execute(message, args, Discord) {
+    execute(client,message, args, Discord) {
         const embed = new MessageEmbed()
         .setTitle("Ping")
      message.channel.send('loading...').then((msg) => {

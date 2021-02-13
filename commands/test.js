@@ -1,7 +1,7 @@
 module.exports = {
     name: "test",
     aliases: ["aliase"],
-    execute(message, args) {
+    execute(xlient, message, args) {
         message.channel.send("template command")
     },
 };
