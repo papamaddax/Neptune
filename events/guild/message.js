@@ -1,3 +1,4 @@
+const { rmSync } = require('fs');
 const db = require('quick.db');
 
 
@@ -10,18 +11,46 @@ try{
 
 }
     try {
+        if(message.channel.id !== db.get(`${guildid}.countingchannel`)) return;
+        if(isNaN(message.content)) return;
+        if(message.author.bot) return;
 
 
         var guildid = message.guild.id
-        if (message.content == db.get(`${guildid}.number`) && message.channel.id == db.get(`${guildid}.countingchannel`)) {
+        if(message.author.id == db.get(`${guildid}.lastCounter`)){
+            message.delete()
+            let sameSenderEmbed = new Discord.MessageEmbed()
+            .setTitle(`Error, You cannot count two numbers in a row, restating at 1`)
+            .setDescription(message.content)
+            .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setColor("RED")
+            message.channel.send(sameSenderEmbed)
+            db.set(`${guildid}.number`, 1)
+            return;
+        }
+        
+        if (message.content == db.get(`${guildid}.number`)){
             db.add(`${guildid}.number`, 1)
-            message.react('✅')
+            db.set(`${guildid}.lastCounter`, message.author.id)
+            message.delete()
+            let correctEmbed = new Discord.MessageEmbed()
+            .setTitle('Correct')
+            .setDescription(message.content)
+            .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setColor("GREEN")
+            message.channel.send(correctEmbed)
             console.log('new number:', +db.get(`${guildid}.number`))
             return;
         }
-        if (message.channel.id == db.get(`${guildid}.countingchannel`) & !isNaN(message.content) & message.content !== db.get(`${guildid}.number`)) {
-            message.channel.send(`Incorrect! The correct number was ${db.get(`${guildid}.number`)}, restarting at 1`)
-            message.react('❌')
+
+        if (message.content !== db.get(`${guildid}.number`)) {
+            message.delete()
+            let wrongEmbed = new Discord.MessageEmbed()
+            .setTitle(`Incorrect! The correct number was ${db.get(`${guildid}.number`)}, restarting at 1`)
+            .setDescription(message.content)
+            .setAuthor(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setColor("RED")
+            message.channel.send(wrongEmbed)
             db.set(`${guildid}.number`, 1)
         }
 
