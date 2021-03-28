@@ -1,7 +1,7 @@
 module.exports = {
     name: "ban",
     aliases: ['b'],
-    execute(client, message, args, Discord, cmd) {
+    execute(client, message, args, Discord) {
 
         const target = message.mentions.users.first()
 

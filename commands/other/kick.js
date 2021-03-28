@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'kick',
     aliases: ['aliase'],
-    async execute(message, args) {
+    async execute(client, message, args, Discord) {
             const member = message.mentions.members.first() || message.guild.members.get(args[0]);
             if(message.member.hasPermission('KICK_MEMBERS')) {
             if(member) {

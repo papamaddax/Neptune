@@ -3,7 +3,7 @@ const db = require('quick.db')
     module.exports = {
     name: "prefix",
     aliases: ['p'],
-    execute(client, message, args, Discord, cmd) {
+    execute(client, message, args, Discord) {
         if(!message.member.hasPermission('ADMINISTRATOR')){
          message.channel.send('Insufficient permissions')
          return;
