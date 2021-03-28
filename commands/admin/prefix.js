@@ -16,4 +16,4 @@ const db = require('quick.db')
         message.channel.send(`Prefix has been set to ${args[0]}`)
      
     },
-};
+};  
