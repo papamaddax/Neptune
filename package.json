@@ -16,7 +16,7 @@
     "quick.db": "^7.1.3",
     "swiftcord": "^2.1.7",
     "weather-js": "^2.0.0",
-    "ws": "^7.4.3"
+    "ws": "^7.4.4"
   },
   "devDependencies": {},
   "repository": {

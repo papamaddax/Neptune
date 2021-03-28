@@ -1,6 +1,7 @@
   const fs = require('fs');
 
   module.exports = (client, Discord) => {
+    console.log('bro')
       const { Collection } = require("discord.js");
 
       client.commands = new Collection();
