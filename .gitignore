@@ -1,3 +1,7 @@
 
 .env
+<<<<<<< Updated upstream
 json.sqlite
+=======
+.env
+>>>>>>> Stashed changes
