@@ -6,7 +6,7 @@ module.exports = async (Discord, client, message) => {
     client.user.setPresence({
         activity: {
             type: 'WATCHING',
-            name: `-help`
+            name: `${client.guilds.size} servers`
         },
         status: 'dnd'
     });
